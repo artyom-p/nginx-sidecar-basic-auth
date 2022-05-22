@@ -28,6 +28,12 @@ server {
     }
 {{ end }}
 
+{{ if .Env.ACME_CHALLENGE_PATH }}
+    location ^~ /.well-known/acme-challenge/ {
+        auth_basic off;
+    }
+{{ end }}
+
     location / {
 
         # Basic Auth
