@@ -28,7 +28,7 @@ server {
     }
 {{ end }}
 
-{{ if .Env.ACME_CHALLENGE_PATH }}
+{{ if .Env.ALLOW_ACME_HTTP_CHALLENGES }}
     location ^~ /.well-known/acme-challenge/ {
         auth_basic off;
     }
